@@ -1,28 +1,38 @@
+const verificaV1 = document.getElementById('valor01')
+const verificaV2 = document.getElementById('valor02')
+const resultado = document.getElementById('resultado');
+
+
 function calcularTotal () {
-
-    const verificaV1 = document.getElementById('valor01')
-    console.log(verificaV1);
-
-    const verificaV2 = document.getElementById('valor02')
-    console.log(verificaV2);
+    let v1 = parseFloat(verificaV1.value);
+    let v2 = parseFloat(verificaV2.value);
 
 
-    if (verificaV1 === '' || verificaV2 == '') {
-        alert ("Valor 01 ou Valor 02 em branco, digite um numero");
+    if (isNaN(v1) ||isNaN(v2)) {
+        resultado.style.display = 'flex';
 
+        
+        resultado.innerHTML = 
+
+        `<ul>
+        
+        <li>Erro na Validação </li>
+        <li>Por favor, informe valores numericos validos nos dois campos</li> 
+        
+        </ul>
+        `
     } else {
-        let v1 = parseFloat(document.getElementById('valor01').value);
-        let v2 = parseFloat(document.getElementById('valor02').value);
-        document.getElementById('resultado').style.disply = 'flex';
+        
+        resultado.style.display = 'flex';
 
-        const resultado = document.getElementById('resultado');
+        
         resultado.innerHTML = 
 
         `<ul>
         
         <li>Preco: <span> ${v1} </span> </li>
         <li>Quantidade: <span>${v2}</span> </li> 
-        <li>O valor total é: ${v1} * ${v2} = <span>${v1 * v2}</span> </li>
+        <li>O valor total é: <span>${v1 * v2}</span> </li>
         
         </ul>
         `
@@ -32,48 +42,163 @@ function calcularTotal () {
 
 }
 
-
-
 function desconto () {
-    const verificaV1 = document.getElementById('valor01')
-    console.log(verificaV1);
-
-    const verificaV2 = document.getElementById('valor02')
-    console.log(verificaV2);
+    let v1 = parseFloat(verificaV1.value);
+    let v2 = parseFloat(verificaV2.value);
 
 
-    if (verificaV1 === '' || verificaV2 == '') {
-        alert ("Valor 01 ou Valor 02 em branco, digite um numero");
+    if (isNaN(v1) ||isNaN(v2)) {
+        resultado.style.display = 'flex';
 
-    } else {
-        let v1 = parseFloat(document.getElementById('valor01').value);
-        let v2 = parseFloat(document.getElementById('valor02').value);
-        document.getElementById('resultado').style.disply = 'flex';
-
-        const resultado = document.getElementById('resultado');
+        
         resultado.innerHTML = 
 
         `<ul>
         
-        <li> Volor: <span> ${v1} </span> </li>
-        <li> Desconto: <span>${v2}</span> </li>     
-        <li>O resultado da operação é = <span> ${ v1- ((v1 * v2) / 100)}</span> </li>
+        <li>Erro na Validação </li>
+        <li>Por favor, informe valores numericos validos nos dois campos</li> 
+        
+        </ul>
+        `
+
+    } else {
+        
+        resultado.style.display = 'flex';
+
+        
+        resultado.innerHTML = 
+
+        `<ul>
+        
+        <li>Preco: <span> ${v1} </span> </li>
+        <li>Porcentagem de Desconto: <span>${v2}</span> </li> 
+        <li>O valor total é: <span>${ v1- ((v1 * v2) / 100)}</span> </li>
+        
         </ul>
         `
    
     };
+        
 
 }
 
+function juros () {
+    let v1 = parseFloat(verificaV1.value);
+    let v2 = parseFloat(verificaV2.value);
 
 
+    if (isNaN(v1) ||isNaN(v2)) {
+        resultado.style.display = 'flex';
+
+        
+        resultado.innerHTML = 
+
+        `<ul>
+        
+        <li>Erro na Validação </li>
+        <li>Por favor, informe valores numericos validos nos dois campos</li> 
+        
+        </ul>
+        `
+
+    } else {
+        
+        resultado.style.display = 'flex';
+
+        
+        resultado.innerHTML = 
+
+        `<ul>
+        
+        <li>Preco: <span> ${v1} </span> </li>
+        <li>Porcentagem de Juros: <span>${v2}</span> </li> 
+        <li>O valor total é: <span>${ v1+ ((v1 * v2) / 100)}</span> </li>
+        
+        </ul>
+        `
+   
+    };
+        
+}
 
 
+function comissao () {
+    let v1 = parseFloat(verificaV1.value);
+    let v2 = parseFloat(verificaV2.value);
 
 
+    if (isNaN(v1) ||isNaN(v2)) {
+        resultado.style.display = 'flex';
+
+        
+        resultado.innerHTML = 
+
+        `<ul>
+        
+        <li>Erro na Validação </li>
+        <li>Por favor, informe valores numericos validos nos dois campos</li> 
+        
+        </ul>
+        `
+
+    } else {
+        
+        resultado.style.display = 'flex';
+
+        
+        resultado.innerHTML = 
+
+        `<ul>
+        
+         <li>Preco: <span> ${v1} </span> </li>
+        <li>Porcentagem de comissão: <span>${v2}</span> </li> 
+        <li>A comissao recebida foi de: <span>${(v1*v2/100)}</span> </li>
+        
+        </ul>
+        `
+   
+    };
+}
+
+function lucro () {
+    let v1 = parseFloat(verificaV1.value);
+    let v2 = parseFloat(verificaV2.value);
 
 
+    if (isNaN(v1) ||isNaN(v2)) {
+        resultado.style.display = 'flex';
 
+        
+        resultado.innerHTML = 
+
+        `<ul>
+        
+        <li>Erro na Validação </li>
+        <li>Por favor, informe valores numericos validos nos dois campos</li> 
+        
+        </ul>
+        `
+
+    } else {
+        
+        resultado.style.display = 'flex';
+
+        
+        resultado.innerHTML = 
+
+        `<ul>
+        
+        <li>Preco: <span> ${v1} </span> </li>
+        <li>Custo de Produção: <span>${v2}</span> </li> 
+        <li>O lucro gerado com essa venda foi de: <span>${v1-v2}</span> </li>
+        
+        </ul>
+        `
+   
+    };
+        
+
+}
 
 
 
@@ -81,10 +206,9 @@ function desconto () {
 
 function limpar () {
     //esconder o container de resultado
-    document.getElementById ('resultado').style.display = 'none'
+    resultado.style.display = 'none';
     // limpar os valors digitados nos campos 
-    document.getElementById('valor01').value = '';
-    document.getElementById('valor02').value = '';
-
-
+    verificaV1.value = '';
+    verificaV2.value = '';
+    verificaV1.focus();
 };

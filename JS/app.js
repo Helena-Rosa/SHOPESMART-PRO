@@ -30,9 +30,9 @@ function calcularTotal () {
 
         `<ul>
         
-        <li>Preco: R$ <span> ${v1.toFixed(2)} </span> </li>
+        <li>Preço: R$ <span> ${v1.toFixed(2)} </span> </li>
         <li>Quantidade: R$ <span>${v2.toFixed(2)}</span> </li> 
-        <li>O valor total é: R$ <span>${v1 * v2.toFixed(2)}</span> </li>
+        <li>O valor total é: R$ <span>${(v1 * v2).toFixed(2)}</span> </li>
         
         </ul>
         `
@@ -70,7 +70,7 @@ function desconto () {
 
         `<ul>
         
-        <li>Preco: R$ <span> ${v1.toFixed(2)} </span> </li>
+        <li>Preço: R$ <span> ${v1.toFixed(2)} </span> </li>
         <li>Porcentagem de Desconto: <span>${v2}</span>% </li> 
         <li>O valor total é: R$ <span> ${ v1- ((v1 * v2) / 100).toFixed(2)}</span> </li>
         
@@ -104,15 +104,16 @@ function juros () {
     } else {
         
         resultado.style.display = 'flex';
+        
 
         
         resultado.innerHTML = 
 
         `<ul>
         
-        <li>Preco: R$ <span> ${v1.toFixed(2)} </span> </li>
+        <li>Preço: R$ <span> ${v1.toFixed(2)} </span> </li>
         <li>Porcentagem de Juros: <span>${v2}</span>% </li> 
-        <li>O valor total é: R$ <span>${ v1+ ((v1 * v2) / 100).toFixed(2)}</span> </li>
+        <li>O valor total é: R$ <span>${ (v1+ (v1 * v2) / 100).toFixed(2)}</span> </li>
         
         </ul>
         `
@@ -150,7 +151,7 @@ function comissao () {
 
         `<ul>
         
-        <li>Preco: R$ <span> ${v1.toFixed(2)} </span> </li>
+        <li>Preço: R$ <span> ${v1.toFixed(2)} </span> </li>
         <li>Porcentagem de comissão: <span>${v2}</span>% </li> 
         <li>A comissao recebida foi de: R$ <span>${(v1*v2/100).toFixed(2)}</span> </li>
         
@@ -188,9 +189,9 @@ function lucro () {
 
         `<ul>
         
-        <li>Preco: R$ <span> ${v1.toFixed(2)} </span> </li>
-        <li>Custo de Produção: R$ <span>${v2.toFixed(2)}</span> </li> 
-        <li>O lucro gerado com essa venda foi de: R$ <span>${(v1-v2).toFixed(2)}</span> </li>
+        <li>Preço: R$ <span> ${v1.toFixed(2)} </span> </li>
+        <li>Custo de aquisição: R$ <span>${v2.toFixed(2)}</span> </li> 
+        <li>Luro: R$ <span>${(v1-v2).toFixed(2)}</span> </li>
         
         </ul>
         `

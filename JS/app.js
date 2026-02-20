@@ -4,8 +4,8 @@ const resultado = document.getElementById('resultado');
 
 
 function calcularTotal () {
-    let v1 = parseFloat(verificaV1.value);
-    let v2 = parseFloat(verificaV2.value);
+    const v1 = parseFloat(verificaV1.value);
+    const v2 = parseFloat(verificaV2.value);
 
 
     if (isNaN(v1) ||isNaN(v2)) {
@@ -30,9 +30,9 @@ function calcularTotal () {
 
         `<ul>
         
-        <li>Preco: <span> ${v1} </span> </li>
-        <li>Quantidade: <span>${v2}</span> </li> 
-        <li>O valor total é: <span>${v1 * v2}</span> </li>
+        <li>Preco: R$ <span> ${v1.toFixed(2)} </span> </li>
+        <li>Quantidade: R$ <span>${v2.toFixed(2)}</span> </li> 
+        <li>O valor total é: R$ <span>${v1 * v2.toFixed(2)}</span> </li>
         
         </ul>
         `
@@ -43,8 +43,8 @@ function calcularTotal () {
 }
 
 function desconto () {
-    let v1 = parseFloat(verificaV1.value);
-    let v2 = parseFloat(verificaV2.value);
+    const v1 = parseFloat(verificaV1.value);
+    const v2 = parseFloat(verificaV2.value);
 
 
     if (isNaN(v1) ||isNaN(v2)) {
@@ -70,9 +70,9 @@ function desconto () {
 
         `<ul>
         
-        <li>Preco: <span> ${v1} </span> </li>
-        <li>Porcentagem de Desconto: <span>${v2}</span> </li> 
-        <li>O valor total é: <span>${ v1- ((v1 * v2) / 100)}</span> </li>
+        <li>Preco: R$ <span> ${v1.toFixed(2)} </span> </li>
+        <li>Porcentagem de Desconto: <span>${v2}</span>% </li> 
+        <li>O valor total é: R$ <span> ${ v1- ((v1 * v2) / 100).toFixed(2)}</span> </li>
         
         </ul>
         `
@@ -83,8 +83,8 @@ function desconto () {
 }
 
 function juros () {
-    let v1 = parseFloat(verificaV1.value);
-    let v2 = parseFloat(verificaV2.value);
+    const v1 = parseFloat(verificaV1.value);
+    const v2 = parseFloat(verificaV2.value);
 
 
     if (isNaN(v1) ||isNaN(v2)) {
@@ -110,9 +110,9 @@ function juros () {
 
         `<ul>
         
-        <li>Preco: <span> ${v1} </span> </li>
-        <li>Porcentagem de Juros: <span>${v2}</span> </li> 
-        <li>O valor total é: <span>${ v1+ ((v1 * v2) / 100)}</span> </li>
+        <li>Preco: R$ <span> ${v1.toFixed(2)} </span> </li>
+        <li>Porcentagem de Juros: <span>${v2}</span>% </li> 
+        <li>O valor total é: R$ <span>${ v1+ ((v1 * v2) / 100).toFixed(2)}</span> </li>
         
         </ul>
         `
@@ -123,8 +123,8 @@ function juros () {
 
 
 function comissao () {
-    let v1 = parseFloat(verificaV1.value);
-    let v2 = parseFloat(verificaV2.value);
+    const v1 = parseFloat(verificaV1.value);
+    const v2 = parseFloat(verificaV2.value);
 
 
     if (isNaN(v1) ||isNaN(v2)) {
@@ -150,9 +150,9 @@ function comissao () {
 
         `<ul>
         
-         <li>Preco: <span> ${v1} </span> </li>
-        <li>Porcentagem de comissão: <span>${v2}</span> </li> 
-        <li>A comissao recebida foi de: <span>${(v1*v2/100)}</span> </li>
+        <li>Preco: R$ <span> ${v1.toFixed(2)} </span> </li>
+        <li>Porcentagem de comissão: <span>${v2}</span>% </li> 
+        <li>A comissao recebida foi de: R$ <span>${(v1*v2/100).toFixed(2)}</span> </li>
         
         </ul>
         `
@@ -161,8 +161,8 @@ function comissao () {
 }
 
 function lucro () {
-    let v1 = parseFloat(verificaV1.value);
-    let v2 = parseFloat(verificaV2.value);
+    const v1 = parseFloat(verificaV1.value);
+    const v2 = parseFloat(verificaV2.value);
 
 
     if (isNaN(v1) ||isNaN(v2)) {
@@ -188,9 +188,9 @@ function lucro () {
 
         `<ul>
         
-        <li>Preco: <span> ${v1} </span> </li>
-        <li>Custo de Produção: <span>${v2}</span> </li> 
-        <li>O lucro gerado com essa venda foi de: <span>${v1-v2}</span> </li>
+        <li>Preco: R$ <span> ${v1.toFixed(2)} </span> </li>
+        <li>Custo de Produção: R$ <span>${v2.toFixed(2)}</span> </li> 
+        <li>O lucro gerado com essa venda foi de: R$ <span>${(v1-v2).toFixed(2)}</span> </li>
         
         </ul>
         `
